@@ -1,0 +1,76 @@
+.create-profile-bg-container {
+    background-image: url('../../../src/assets/images/image4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.create-profile-form-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 60px;
+    border-radius: 15px;
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.create-profile-form-container h1 {
+    margin-bottom: 20px;
+    color: whitesmoke;
+    font-size: 24px;
+}
+
+.create-profile-form-container label,
+.create-profile-form-container input,
+.create-profile-form-container select,
+.create-profile-form-container button {
+    display: block;
+    margin: 10px auto;
+    color: whitesmoke;
+    width: 80%;
+}
+
+.create-profile-form-container input,
+.create-profile-form-container select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: transparent;
+    background-color: black;
+}
+
+.create-profile-form-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    cursor: pointer;
+    width: auto;
+}
+
+.create-profile-form-container button:hover {
+    background-color: gray;
+    transform: scale(1.1);
+}
+
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.field {
+    flex-basis: calc(50% - 10px);
+}

@@ -1,0 +1,84 @@
+/* src/components/SignUpPage.css */
+
+.background-container {
+  background-image: url('../../../src/assets/images/image4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Mettez l'image en arrière-plan */
+}
+
+.sign-up-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 60px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background-color: transparent;
+    box-shadow: 0 2px 5px transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .sign-up-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: whitesmoke;
+  }
+  
+  .sign-up-container .input-container {
+    margin-bottom: 30px;
+  }
+  
+  .sign-up-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sign-up-container input[type="text"],
+  .sign-up-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+  
+  .sign-up-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .sign-up-container button:hover {
+    background-color: gray;
+  }
+
+  .sign-up-container p {
+    font-size: 16px;
+    margin-top: 20px;
+    color: whitesmoke;
+  }
+  
+  .sign-up-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .sign-up-container a:hover {
+    text-decoration: underline;
+  }
