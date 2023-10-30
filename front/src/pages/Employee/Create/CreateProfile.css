@@ -1,5 +1,5 @@
 .create-profile-bg-container {
-    background-image: url('../../../src/assets/images/image4.jpg');
+    background-image: url('../../../../src/assets/images/image4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

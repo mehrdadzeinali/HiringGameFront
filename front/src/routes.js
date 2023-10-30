@@ -1,9 +1,9 @@
 import Home from './pages/Home/Home';
-import LoginPage from './pages/Login/Login';
-import SignUpPage from './pages/SignUp/SignUp';
-import SearchPage from './pages/Search/Search';
-import CreateProfile from './pages/CreateProfile/CreateProfile';
-import ViewEmployeeProfile from './pages/ViewProfile/ViewProfile';
+import LoginPage from './pages/Authentification/Login/Login';
+import SignUpPage from './pages/Authentification/SignUp/SignUp';
+import SearchPage from './pages/Employee/Search/Search';
+import CreateProfile from './pages/Employee/Create/CreateProfile';
+import ViewEmployeeProfile from './pages/Employee/ViewProfile/ViewProfile';
 
 const routes = [
   // Authentication routes
@@ -12,12 +12,12 @@ const routes = [
 
   // main routes
   { path: '/home', component: Home },
-  { path: '/searchPage', component: SearchPage },
   { path: '/', exact: true, component: Home },
   
   // employee routes
-  { path: '/createProfile', component: CreateProfile },
-  { path: '/viewProfile/:employeeId', component: ViewEmployeeProfile }
+  { path: '/employee/create', component: CreateProfile },
+  { path: '/employee/view/:employeeId', component: ViewEmployeeProfile },
+  { path: '/employee/search', component: SearchPage },
 ];
 
 export default routes;
