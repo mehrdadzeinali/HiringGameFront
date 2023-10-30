@@ -1,11 +1,11 @@
 // src/components/ViewEmployeeProfile/ViewEmployeeProfile.js
 
 import React, { useState, useEffect } from 'react';
-import './ViewProfile.css';
+import './ViewProfile.css'; 
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function ViewEmployeeProfile() {
-  // This is just a mock state. Ideally, you'd fetch this data from your API.
   const [employeeData, setEmployeeData] = useState({
     firstName: 'John',
     lastName: 'Doe',
@@ -24,30 +24,72 @@ function ViewEmployeeProfile() {
     profilePhoto: null,
   });
 
-  useEffect(() => {
-    const employeeId = 10;
+  const { employeeId } = useParams();
 
-    axios.get(`http://localhost:3000/api/employee/${employeeId}`).then(response => setEmployeeData(response.data));
-  }, []);
+  useEffect(() => {
+      axios.get(`http://localhost:3000/api/employee/${employeeId}`)
+           .then(response => setEmployeeData(response.data));
+  }, [employeeId]);
+  
 
   return (
     <div className="profile-page-view">
-      <img src={employeeData.profilePhoto} alt="Employee Profile" className="profile-photo-view"/>
-      
-      <div className="employee-info-view">
+      <div className="profile-container">
+        <img src={employeeData.profilePhoto} alt="Employee Profile" className="profile-photo-view"/>
         <h2>{employeeData.firstName} {employeeData.lastName}</h2>
-        <p><strong>Email:</strong> {employeeData.email}</p>
-        <p><strong>Phone:</strong> {employeeData.phone}</p>
-        <p><strong>LinkedIn:</strong> <a href={employeeData.linkedin}>LinkedIn Profile</a></p>
-        <p><strong>Category:</strong> {employeeData.category}</p>
-        <p><strong>Job Title:</strong> {employeeData.jobTitle}</p>
-        <p><strong>Experience:</strong> {employeeData.experience}</p>
-        <p><strong>Work Type:</strong> {employeeData.workType}</p>
-        <p><strong>Country:</strong> {employeeData.country}</p>
-        <p><strong>City:</strong> {employeeData.city}</p>
-        <p><strong>Situation:</strong> {employeeData.situation}</p>
-        <p><strong>Languages:</strong> {employeeData.languages}</p>
-        {employeeData.cv && <a href={employeeData.cv} download className="download-cv-button">Download CV</a>}
+      </div>
+
+      <div className="employee-info-view">
+        <div className="info-card">
+          <span className="icon">📧</span> 
+          <span><strong>Email:</strong> {employeeData.email}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">📞</span>
+          <span><strong>Phone:</strong> {employeeData.phone}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🔗</span>
+          <span><strong>LinkedIn:</strong> <a href={employeeData.linkedin}>LinkedIn Profile</a></span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🚀</span>
+          <span><strong>Category:</strong> {employeeData.category}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">👔</span>
+          <span><strong>Job Title:</strong> {employeeData.jobTitle}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">⏳</span>
+          <span><strong>Experience:</strong> {employeeData.experience}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🕒</span>
+          <span><strong>Work Type:</strong> {employeeData.workType}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🌍</span>
+          <span><strong>Country:</strong> {employeeData.country}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🏙️</span>
+          <span><strong>City:</strong> {employeeData.city}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">💼</span>
+          <span><strong>Situation:</strong> {employeeData.situation}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🗣️</span>
+          <span><strong>Languages:</strong> {employeeData.languages}</span>
+        </div>
+        {employeeData.cv && 
+          <div className="info-card">
+            <span className="icon">📄</span>
+            <span><a href={employeeData.cv} download className="download-cv-button">Download CV</a></span>
+          </div>
+        }
       </div>
     </div>
   );

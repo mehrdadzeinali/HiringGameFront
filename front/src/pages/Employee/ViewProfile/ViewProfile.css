@@ -1,57 +1,55 @@
-/* Background styling */
 .profile-page-view {
     background-image: url('../../../../src/assets/images/image4.jpg');
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: center center;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+  
+  .profile-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .profile-photo-view {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+  }
+  
+  .employee-info-view {
     width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* Profile data styling */
-.employee-info-view {
-    width: 600px;
-    margin: 0 auto;
-    padding: 60px;
-    border-radius: 15px;
-    background-color: transparent;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.employee-info-view h2 {
-    margin-bottom: 20px;
-    color: whitesmoke;
-    font-size: 24px;
-}
-
-.employee-info-view p,
-.employee-info-view a {
-    display: block;
-    margin: 10px auto;
-    color: whitesmoke;
-    width: 80%;
-}
-
-.employee-info-view a {
-    text-decoration: none;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    cursor: pointer;
-    width: auto;
-}
-
-.employee-info-view a:hover {
-    background-color: gray;
-    transform: scale(1.1);
-}
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .info-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }

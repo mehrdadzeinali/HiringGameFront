@@ -17,10 +17,10 @@ function MyHomePage() {
         <p id="descriptionText2">Are you an employer? Say goodbye to sifting through hundreds of resumes. Our platform allows you to find the perfect candidate by browsing profiles that fit your specific needs.</p>
         <p id="descriptionText3">Are you seeking employment? Showcase your skills, experience, and aspirations on your profile, and let your next job find you!</p>
         <p id="descriptionText4">Experience a new, simplified, and more efficient way of connecting talent with opportunity.</p>
-        <Link to="/searchPage">
+        <Link to="/employee/search">
           <button id="getStartedBtn" className="personalized-button button-spacing">Find a new colleague!</button>
         </Link>
-        <Link to="/CreateProfile">
+        <Link to="/employee/create">
           <button id="getStartedBtn" className="personalized-button button-spacing">Wait a new job!</button>
         </Link>
       </div>
