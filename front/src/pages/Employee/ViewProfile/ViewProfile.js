@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './ViewProfile.css'; 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function ViewEmployeeProfile() {
   const [employeeData, setEmployeeData] = useState({
@@ -35,6 +36,9 @@ function ViewEmployeeProfile() {
   return (
     <div className="profile-page-view">
       <div className="profile-container">
+      <Link to="/home">
+        <button className="hiring-game-button">HiringGame!</button>
+      </Link>
         <img src={employeeData.profilePhoto} alt="Employee Profile" className="profile-photo-view"/>
         <h2>{employeeData.firstName} {employeeData.lastName}</h2>
       </div>
