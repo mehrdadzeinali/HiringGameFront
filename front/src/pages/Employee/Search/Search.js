@@ -21,7 +21,7 @@ const PersonalizedSearchPage = () => {
   return (
     <div className="personalized-bg-container">
       <Link to="/home">
-          <button className="Home-button">HiringGame!</button>
+          <button className="hiring-game-button">HiringGame!</button>
       </Link>
       <div className="personalized-search-container">
         <h1>Search your ideal employee!</h1>

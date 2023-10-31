@@ -50,7 +50,7 @@ function ViewEmployeeProfile() {
         </div>
         <div className="info-card">
           <span className="icon">🔗</span>
-          <span><strong>LinkedIn:</strong> <a href={employeeData.linkedin}>LinkedIn Profile</a></span>
+          <span><strong>LinkedIn:</strong> <a href={employeeData.linkedin.startsWith("http") ? employeeData.linkedin : `https://${employeeData.linkedin}`}>LinkedIn Profile</a></span>
         </div>
         <div className="info-card">
           <span className="icon">🚀</span>

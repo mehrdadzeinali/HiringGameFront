@@ -1,14 +1,21 @@
 .personalized-bg-container {
   background-image: url('../../../../src/assets/images/image4.jpg');
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-size: cover;
+  height: 100vh; /* Changed to 100vh to fit the height of the viewport */
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: center center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+}
+
+.hiring-game-button {  /* This is a new class for the "HiringGame!" button */
+  position: absolute;
+  top: 20px;   /* Adjust as per your needs */
+  left: 20px;  /* Adjust as per your needs */
 }
 
 .personalized-search-container {
@@ -20,8 +27,8 @@
   background-color: transparent;
   box-shadow: 0 2px 5px transparent;
   position: absolute;
-  top: 45%;
-  left: 30%;
+  top: 50%;   /* Updated to 50% for vertical centering */
+  left: 50%;  /* Updated to 50% for horizontal centering */
   transform: translate(-50%, -50%);
   text-align: center;
 }

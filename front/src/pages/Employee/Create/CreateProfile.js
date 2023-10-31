@@ -20,9 +20,9 @@ export default class CreateProfile extends React.Component {
             city: '',
             situation: '',
             languages: '',
-            cv: null, // To store the CV file
-            profilePhoto: null, // To store the profile photo file
-            submitted: false, // To track if the form has been submitted
+            cv: null,
+            profilePhoto: null,
+            submitted: false,
         };
     }
 
@@ -68,11 +68,11 @@ export default class CreateProfile extends React.Component {
                 }
             });
 
-            console.log(response)
-
+            
             if (response.status === 201) {
-                console.log(response.data.message);  // Logging the success message from server
+                const id = response.data.id;
                 this.setState({ submitted: true });
+                window.location.href = `/employee/view/${id}`;
             } else {
                 console.error('Error creating profile:', response.data);
             }
@@ -218,8 +218,8 @@ export default class CreateProfile extends React.Component {
                     <div className="field-row">
                     {this.state.workType === "Not Remote" && (
                             <div className="field">
-                                <label htmlFor="Country">Country:</label>
-                                <input type="text" id="Country" onChange={this.handleChange} />
+                                <label htmlFor="country">Country:</label>
+                                <input type="text" id="country" onChange={this.handleChange} />
                             </div>
                     )}
 
@@ -242,7 +242,7 @@ export default class CreateProfile extends React.Component {
 
                         <div className="field">
                             <label htmlFor="languages">Languages:</label>
-                            <select id="languagesSelect" onChange={this.handleChange}>
+                            <select id="language" onChange={this.handleChange}>
                                 <option value="English">English</option>
                                 <option value="French">French</option>
                                 <option value="Spanish">Spanish</option>
