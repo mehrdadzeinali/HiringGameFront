@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ViewList.css';
+import { Link } from 'react-router-dom';
 
 const ViewEmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -95,14 +96,16 @@ const ViewEmployeeList = () => {
             <div className="profile-container">
                 <div className="employee-grid">
                     {employees.map((employee, index) => (
-                        <div key={index} className="employee-square">
-                            <img src={employee.profilePhoto} alt={employee.firstName} className="profile-photo-view" />
-                            <div className="employee-info">
-                                <div className="employee-name">{employee.firstName + ' ' + employee.lastName}</div>
-                                <div className="employee-job-title">{employee.jobTitle}</div>
-                                <div className="employee-experience">{employee.experience} years of experience</div>
-                            </div>
-                        </div>
+                      <Link to={`/employee/view/${employee.id}`} key={index}>
+                          <div className="employee-square">
+                              <img src={employee.profilePhoto} alt={employee.firstName} className="profile-photo-view" />
+                              <div className="employee-info">
+                                  <div className="employee-name">{employee.firstName + ' ' + employee.lastName}</div>
+                                  <div className="employee-job-title">{employee.jobTitle}</div>
+                                  <div className="employee-experience">{employee.experience} years of experience</div>
+                              </div>
+                          </div>
+                      </Link>
                     ))}
                 </div>
             </div>
@@ -111,4 +114,3 @@ const ViewEmployeeList = () => {
 };
 
 export default ViewEmployeeList;
-
