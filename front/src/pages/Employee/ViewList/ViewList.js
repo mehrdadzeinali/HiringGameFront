@@ -12,14 +12,24 @@ const ViewEmployeeList = () => {
     const [experiences, setExperiences] = useState(["Choose the experience", "1-2 years", "3-5 years", "6-10 years", "10+ years"]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/employee/list')
-            .then(response => {
-                setEmployees(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the employees', error);
-            });
-    }, []);
+      const urlParams = new URLSearchParams(window.location.search);
+    
+      axios.get(`http://localhost:3000/api/employee/list`, {
+        params: {
+          category: urlParams.get('category'),
+          jobTitle: urlParams.get('jobTitle'),
+          workType: urlParams.get('workType'),
+          city: urlParams.get('city'),
+          country: urlParams.get('country')
+        }
+      })
+      .then(response => {
+        setEmployees(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the employees', error);
+      });
+    }, []);    
 
     return (
         <div className="list-page-view">

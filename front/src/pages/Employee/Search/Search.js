@@ -10,18 +10,27 @@ const PersonalizedSearchPage = () => {
   const [Country, setCountry] = useState('');
 
   const jobTitlesInCategory = {
-    'Informatique': ['Developer', 'System Admin', 'Data Analyst'],
-    'Healthcare': ['Nurse', 'Doctor', 'Technician']
+    'Category 1': ['Job Title 1', 'Job Title 2', 'Job Title 3'],
+    'Category 2': ['Job Title 1', 'Job Title 2', 'Job Title 3']
   };
 
   const handleSearch = () => {
-    console.log(`Searching for ${jobTitle} in ${category} that is ${workType} in ${city}`);
+    const queryParams = [];
+    
+    if (category) queryParams.push(`category=${category}`);
+    if (jobTitle) queryParams.push(`jobTitle=${jobTitle}`);
+    if (workType) queryParams.push(`workType=${workType}`);
+    if (city) queryParams.push(`city=${city}`);
+    if (Country) queryParams.push(`country=${Country}`);
+  
+    window.location.href = `/employee/list?${queryParams.join('&')}`;
   };
+  
 
   return (
     <div className="personalized-bg-container">
       <Link to="/home">
-          <button className="hiring-game-button">HiringGame!</button>
+          <button className="hiring-game-button">HirinGame!</button>
       </Link>
       <div className="personalized-search-container">
         <h1>Search your ideal employee!</h1>
@@ -30,8 +39,8 @@ const PersonalizedSearchPage = () => {
           Category:
           <select value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value=''>Select a category</option>
-            <option value='Informatique'>Informatique</option>
-            <option value='Healthcare'>Healthcare</option>
+            <option value='Category 1'>Category 1</option>
+            <option value='Category 2'>Category 2</option>
           </select>
         </label>
 
