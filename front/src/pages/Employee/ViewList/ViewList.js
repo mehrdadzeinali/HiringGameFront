@@ -4,6 +4,12 @@ import './ViewList.css';
 
 const ViewEmployeeList = () => {
     const [employees, setEmployees] = useState([]);
+    const [countries, setCountries] = useState(["Choose the country","USA", "Canada", "UK", "India"]);
+    const [cities, setCities] = useState(["Choose the city","New York", "Toronto", "London", "Mumbai"]);
+    const [workTypes, setWorkTypes] = useState(["Choose the work type","remote", "no remote"]);
+    const [situations, setSituations] = useState(["Active", "On Leave", "Retired", "Fired"]);
+    const [languages, setLanguages] = useState(["English", "French", "Spanish", "Hindi"]);
+    const [experiences, setExperiences] = useState(["Choose the experience", "1-2 years", "3-5 years", "6-10 years", "10+ years"]);
 
     useEffect(() => {
         axios.get('http://localhost:3000/api/employee/list')
@@ -23,45 +29,54 @@ const ViewEmployeeList = () => {
                     <div>
                         <label className="filter-label" htmlFor="country">Country:</label>
                         <select id="country" className="filter-input">
-                            {/* Populate with country options */}
+                            {countries.map(country => (
+                                <option value={country} key={country}>{country}</option>
+                            ))}
                         </select>
                     </div>
 
                     <div>
                         <label className="filter-label" htmlFor="city">City:</label>
                         <select id="city" className="filter-input">
-                            {/* Populate with city options */}
+                            {cities.map(city => (
+                                <option value={city} key={city}>{city}</option>
+                            ))}
                         </select>
                     </div>
 
                     <div>
                         <label className="filter-label" htmlFor="experience">Experience:</label>
                         <select id="experience" className="filter-input">
-                            <option value="1-2">1-2 years</option>
-                            <option value="3-5">3-5 years</option>
-                            <option value="6-10">6-10 years</option>
-                            <option value="10+">10+ years</option>
+                            {experiences.map(experience => (
+                                <option value={experience} key={experience}>{experience}</option>
+                            ))}
                         </select>
                     </div>
 
                     <div>
                         <label className="filter-label" htmlFor="work-type">Work Type:</label>
                         <select id="work-type" className="filter-input">
-                            {/* Populate with work type options */}
+                            {workTypes.map(workType => (
+                                <option value={workType} key={workType}>{workType}</option>
+                            ))}
                         </select>
                     </div>
 
                     <div>
                         <label className="filter-label" htmlFor="situation">Situation:</label>
                         <select id="situation" className="filter-input">
-                            {/* Populate with situation options */}
+                            {situations.map(situation => (
+                                <option value={situation} key={situation}>{situation}</option>
+                            ))}
                         </select>
                     </div>
 
                     <div>
                         <label className="filter-label" htmlFor="languages">Languages:</label>
                         <select id="languages" className="filter-input">
-                            {/* Populate with language options */}
+                            {languages.map(language => (
+                                <option value={language} key={language}>{language}</option>
+                            ))}
                         </select>
                     </div>
                 </div>
@@ -86,3 +101,4 @@ const ViewEmployeeList = () => {
 };
 
 export default ViewEmployeeList;
+
