@@ -4,6 +4,7 @@ import SignUpPage from './pages/Authentification/SignUp/SignUp';
 import SearchPage from './pages/Employee/Search/Search';
 import CreateProfile from './pages/Employee/Create/CreateProfile';
 import ViewEmployeeProfile from './pages/Employee/ViewProfile/ViewProfile';
+import ViewEmployeesList from './pages/Employee/ViewList/ViewList';
 
 const routes = [
   // Authentication routes
@@ -18,6 +19,7 @@ const routes = [
   { path: '/employee/create', component: CreateProfile },
   { path: '/employee/view/:employeeId', component: ViewEmployeeProfile },
   { path: '/employee/search', component: SearchPage },
+  { path: '/employee/list', component: ViewEmployeesList}
 ];
 
 export default routes;
