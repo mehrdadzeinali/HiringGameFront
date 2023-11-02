@@ -3,14 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #F8F9FA;
+    background-color: #E9ECEF;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.logo {
-    font-size: 1.5em;
-    color: #2C3E50;
-    text-decoration: none;
+.logo img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
 }
 
 .auth-buttons {

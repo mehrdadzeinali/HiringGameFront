@@ -1,5 +1,3 @@
-// src/components/LoginPage/LoginPage.js
-
 import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
@@ -26,10 +24,8 @@ function LoginPage() {
       });
   
       if (response.data.status === 'success') {
-        // Navigate the user to another page or display a success message
         console.log("Successfully logged in!");
       } else {
-        // Handle error
         console.log("Invalid email or password");
       }
   
@@ -67,7 +63,7 @@ function LoginPage() {
               onChange={handleInputChange}
             />
           </div>
-          <button type="submit" className="Signin-button">Sign in</button>  {/* Updated class here */}
+          <button type="submit" className="Signin-button">Sign in</button>
         </form>
         <p>You don't have an account? <a href="/signup">Sign up</a></p>
       </div>

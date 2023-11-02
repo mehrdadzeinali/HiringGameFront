@@ -1,14 +1,15 @@
 .home-bg-container {
-  background-image: url('../../../src/assets/images/image4.jpg');
+  background-color: #E9ECEF;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: fixed;
-  top: 0;
+  top: 100;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .my-home-container {
@@ -29,34 +30,36 @@
 .my-home-container h1 {
   text-align: center;
   margin-bottom: 100px;
-  color: whitesmoke;
+  color: black;
 }
 
 .my-home-container p {
   text-align: center;
   margin-bottom: 40px;
-  color: whitesmoke;
+  color: black;
   font-size: x-large;
   font-style: oblique;
 }
 
-button {
-  margin-top: 20px;
-  background-color: #007bff;
-  color: whitesmoke;
-  border: none;
-  border-radius: 20px;
+.button-spacing {
+  margin-right: 10px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.personalized-button {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #2C3E50;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: gray;
-  transform: scale(1.1);
-}
-
-.button-spacing {
-  margin-right: 10px;
+.personalized-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }

@@ -12,11 +12,12 @@ body {
   align-items: flex-start;
   width: 100%;
   overflow-x: hidden;
+  top: 100;
 }
 
 .side-panel {
   position: fixed;
-  top: 0;
+  top: 100;
   left: 0;
   width: 250px;
   height: 100vh;
@@ -86,7 +87,7 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   background-color: #E9ECEF;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  width: 200px; /* Set a fixed width for the filter section */
+  width: 200px; 
 }
 
 .filter-section:hover {
@@ -108,7 +109,7 @@ body {
   outline: none;
   font-size: 0.95em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  width: 100%; /* Ensures the input takes the full width of its container */
+  width: 100%;
 }
 
 .filter-input:hover {

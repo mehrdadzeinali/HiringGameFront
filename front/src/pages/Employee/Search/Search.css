@@ -7,15 +7,15 @@
   flex-direction: column;
   align-items: center;
   background-size: cover;
-  height: 100vh; /* Changed to 100vh to fit the height of the viewport */
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.hiring-game-button {  /* This is a new class for the "HiringGame!" button */
+.hiring-game-button {
   position: absolute;
-  top: 20px;   /* Adjust as per your needs */
-  left: 20px;  /* Adjust as per your needs */
+  top: 20px;
+  left: 20px;
 }
 
 .personalized-search-container {
@@ -27,8 +27,8 @@
   background-color: transparent;
   box-shadow: 0 2px 5px transparent;
   position: absolute;
-  top: 50%;   /* Updated to 50% for vertical centering */
-  left: 50%;  /* Updated to 50% for horizontal centering */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }

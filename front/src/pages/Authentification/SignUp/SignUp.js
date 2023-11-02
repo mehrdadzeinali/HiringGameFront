@@ -34,16 +34,6 @@ function SignUpPage() {
         password: formData.password,
         confirmPassword: formData.confirmPassword
       });
-
-      console.log(response)
-
-      // if (response.status === 201) {
-      //   // User successfully registered
-      //   // Navigate to login page or do some other actions
-      // } else {
-      //   // Handle error
-      //   console.log("Could not register user");
-      // }
   
     } catch (error) {
       console.error(error);

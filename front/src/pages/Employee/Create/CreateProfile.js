@@ -94,7 +94,6 @@ export default class CreateProfile extends React.Component {
     render() {
         const { submitted, cv, profilePhoto } = this.state;
 
-        // Check if the form has been submitted, if so, display the success message and the CV and profile photo fields
         if (submitted) {
             return (
                 <div className="create-profile-bg-container">
@@ -180,7 +179,6 @@ export default class CreateProfile extends React.Component {
                                 <option value="Category 1">Category 1</option>
                                 <option value="Category 2">Category 2</option>
                                 <option value="Category 3">Category 3</option>
-                                {/* Add more categories as needed */}
                             </select>
                         </div>
     
@@ -190,7 +188,6 @@ export default class CreateProfile extends React.Component {
                                 <option value="Job Title 1">Job Title 1</option>
                                 <option value="Job Title 2">Job Title 2</option>
                                 <option value="Job Title 3">Job Title 3</option>
-                                {/* Add more job titles as needed */}
                             </select>
                         </div>
                     </div>
@@ -246,7 +243,6 @@ export default class CreateProfile extends React.Component {
                                 <option value="English">English</option>
                                 <option value="French">French</option>
                                 <option value="Spanish">Spanish</option>
-                                {/* Add more languages as needed */}
                             </select>
                         </div>
                     </div>
