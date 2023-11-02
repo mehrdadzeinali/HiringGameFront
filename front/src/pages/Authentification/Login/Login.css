@@ -1,5 +1,5 @@
-.login-page .background-container {
-  background-image: url('../../../../src/assets/images/image4.jpg');
+.login-page  {
+  background-color: #E9ECEF;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -17,7 +17,7 @@
   padding: 40px;
   border: 2px solid transparent;
   border-radius: 15px;
-  background-color: transparent;
+  background-color: #2C3E50;
   box-shadow: 0 2px 5px transparent;
   position: absolute;
   top: 50%;
@@ -30,33 +30,35 @@
 .login-container h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: whitesmoke;
+  color: #E9ECEF; /* Changed to match the home page */
 }
 
 .input-container {
   margin-bottom: 30px;
-  color: whitesmoke;
+  color: #E9ECEF; /* Changed to match the home page */
 }
 
 label {
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #E9ECEF; /* Changed to match the home page */
 }
 
 input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid whitesmoke;
+  border: 1px solid #E9ECEF; /* Adjusted to match the button background color */
   border-radius: 15px;
   font-size: 16px;
+  color: black; /* Changed to match the home page */
 }
 
 button {
   margin-top: 20px;
-  background-color: #007bff;
-  color: whitesmoke;
+  background-color: #E9ECEF; /* Changed to match the home page */
+  color: #2C3E50; /* Adjusted to match the button text color */
   border: none;
   border-radius: 15px;
   padding: 7px 14px;
@@ -65,55 +67,23 @@ button {
 }
 
 button:hover {
-  background-color: gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
 .login-container p {
   font-size: 16px;
   margin-top: 20px;
-  color: whitesmoke;
+  color: #E9ECEF; /* Changed to match the home page */
 }
 
 .login-container a {
-  color: #007bff;
+  color: #E9ECEF; /* Adjusted to match the button background color */
   text-decoration: none;
   font-weight: bold;
 }
 
 .login-container a:hover {
   text-decoration: underline;
-}
-
-.Home-button {
-  margin-top: 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: 2px solid #0056b3;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.Home-button:hover {
-  background-color: #0056b3;
-  border: 2px solid #007bff;
-}
-
-.Signin-button {
-  margin-top: 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: 2px solid #ffffff;
-  border-radius: 15px;
-  padding: 7px 14px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.Signin-button:hover {
-  background-color: gray;
-  border: 2px solid #007bff;
+  color: black; /* Changed to match the home page */
 }

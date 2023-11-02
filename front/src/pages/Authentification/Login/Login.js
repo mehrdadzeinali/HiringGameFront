@@ -36,10 +36,7 @@ function LoginPage() {
 
   return (
     <div className="login-page">
-      <div className="background-container"></div>
-      <Link to="/home">
-        <button className="Home-button">HiringGame!</button>
-      </Link>
+      <div className="login-container"></div>
       <div className="login-container">
         <h1>Welcome !</h1>
         <form onSubmit={handleSubmit}>
