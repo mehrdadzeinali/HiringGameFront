@@ -41,10 +41,7 @@ function SignUpPage() {
   };
 
   return (
-    <div className="background-container">
-      <Link to="/home">
-        <button className="Home-button">HiringGame!</button>
-        </Link>
+    <div className="sign-up-page">
     <div className="sign-up-container">
       <h1>Create your account</h1>
       <form onSubmit={handleSubmit}>

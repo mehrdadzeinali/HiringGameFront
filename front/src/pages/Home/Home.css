@@ -1,58 +1,102 @@
 .home-bg-container {
-  background-color: #E9ECEF;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  display: flex;
+  height: 100vh;
   width: 100%;
-  min-height: 150vh;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.my-home-container {
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.container > div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-home-container,
+.employee-container,
+.employer-container {
   font-family: Arial, sans-serif;
-  max-width: 400px;
-  margin: 0 auto;
+  flex: 2; 
   padding: 60px;
   border: 2px solid transparent;
   border-radius: 15px;
-  background-color: transparent;
-  box-shadow: 0 2px 5px transparent;
-  position: relative; 
   text-align: center;
+  box-shadow: 0 2px 5px transparent;
 }
 
-.my-home-container h1 {
-  margin-bottom: 100px;
-  color: black;
+.my-home-container,
+.employee-container {
+  background-color: #E9ECEF;
+  color: #2C3E50;
 }
 
-.my-home-container p {
+.employer-container {
+  background-color: #2C3E50;
+  color: #E9ECEF;
+}
+
+.text-container,
+.text-wrapper {
+  max-width: 400px;
+  margin: auto; 
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  height: auto;
+  min-height: 50vh;
+}
+
+.my-home-container h1,
+.employee-container h1,
+.employer-container h1 {
   margin-bottom: 40px;
-  color: black;
+}
+
+.my-home-container p,
+.employee-container p,
+.employer-container p {
+  margin-bottom: 20px;
   font-size: x-large;
   font-style: oblique;
 }
 
-.button-spacing {
-  margin-right: 10px;
-}
-
-.auth-buttons {
+.button-section {
+  flex: 1;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2C3E50;
 }
 
+.button-spacing {
+  margin-bottom: 10px;
+}
+
+.personalized-button-find,
 .personalized-button {
   text-decoration: none;
-  color: #FFFFFF;
-  background-color: #2C3E50;
   padding: 10px 20px;
   border-radius: 10px;
   transition: all 0.3s ease;
+}
+
+.personalized-button-find {
+  color: #2C3E50;
+  background-color: #E9ECEF;
+}
+
+.personalized-button {
+  background-color: #2C3E50;
+  color: #E9ECEF;
 }
 
 .personalized-button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
-

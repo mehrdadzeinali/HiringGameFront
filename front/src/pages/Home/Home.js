@@ -1,22 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Typewriter from '../../assets/fonts/TypeWriter';
 
 function MyHomePage() {
   return (
     <div className="home-bg-container">
-      <div className="my-home-container">
-        <h1 id="welcomeTitle">Welcome to HirinGame!</h1>
-        <p id="descriptionText1">Changing the hiring game, one match at a time. At The Hiring Game, we flip the conventional job search on its head.</p>
-        <p id="descriptionText2">Are you an employer? Say goodbye to sifting through hundreds of resumes. Our platform allows you to find the perfect candidate by browsing profiles that fit your specific needs.</p>
-        <p id="descriptionText3">Are you seeking employment? Showcase your skills, experience, and aspirations on your profile, and let your next job find you!</p>
-        <p id="descriptionText4">Experience a new, simplified, and more efficient way of connecting talent with opportunity.</p>
-        <Link to="/employee/search">
-          <button id="getStartedBtn" className="personalized-button button-spacing">Find a new colleague!</button>
-        </Link>
-        <Link to="/employee/create">
-          <button id="getStartedBtn" className="personalized-button button-spacing">Wait a new job!</button>
-        </Link>
+      <div className="container">
+
+        {/* Employer Section */}
+        <div className="employer-container">
+          <div className="text-wrapper">
+            <h1>Discover Top Talent with Ease!</h1>
+            <p>
+              <Typewriter text ="Searching for the perfect candidate to join your team can be a daunting process. Sifting through piles of resumes, conducting endless interviews, and still not finding the right fit? Bid those days goodbye! Our platform has revolutionized the hiring process. By showcasing detailed profiles of potential hires, you can now match your requirements with candidates' skills, experience, and aspirations. Dive in and explore a world where hiring is not just efficient but also delightful!" delay={75} />
+            </p>
+            <Link to="/employee/search">
+              <button id="employerBtn" className="personalized-button-find button-spacing">Find a new colleague!</button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Employee Section */}
+        <div className="employee-container">
+          <div className="text-wrapper">
+            <h1>Let Your Dream Job Find You!</h1>
+            <p>
+              <Typewriter text = "In today's competitive job market, standing out can be a challenge. But what if you could showcase all that you offer in one comprehensive profile? With our platform, that's a reality! Create a detailed profile highlighting your skills, experiences, aspirations, and let potential employers discover you. No more endless job applications – just sit back, relax, and wait for your next career opportunity to find you." delay={75} />
+            </p>
+            <Link to="/employee/create">
+              <button id="employeeBtn" className="personalized-button button-spacing">Wait a new job!</button>
+            </Link>
+          </div>
+        </div>
+
       </div>
     </div>
   );
