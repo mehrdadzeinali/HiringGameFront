@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_ENDPOINTS from '../../../configs/urls';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ function LoginPage() {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', {
+      const response = await axios.post(API_ENDPOINTS.auth.login, {
         email: formData.username,
         password: formData.password,
       });

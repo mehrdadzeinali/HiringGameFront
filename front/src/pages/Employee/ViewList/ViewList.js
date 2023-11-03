@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ViewList.css';
 import { Link } from 'react-router-dom';
+import API_ENDPOINTS from '../../../configs/urls';
 
 const ViewEmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -14,8 +15,11 @@ const ViewEmployeeList = () => {
 
     useEffect(() => {
       const urlParams = new URLSearchParams(window.location.search);
+
+      console.log('mehrdad')
+      console.log(API_ENDPOINTS.employee.viewList)
     
-      axios.get(`http://localhost:3000/api/employee/list`, {
+      axios.get(API_ENDPOINTS.employee.viewList, {
         params: {
           category: urlParams.get('category'),
           jobTitle: urlParams.get('jobTitle'),

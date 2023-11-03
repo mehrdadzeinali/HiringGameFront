@@ -1,10 +1,9 @@
-// src/components/ViewEmployeeProfile/ViewEmployeeProfile.js
-
 import React, { useState, useEffect } from 'react';
 import './ViewProfile.css'; 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import API_ENDPOINTS from '../../../configs/urls';
 
 function ViewEmployeeProfile() {
   const [employeeData, setEmployeeData] = useState({
@@ -28,7 +27,7 @@ function ViewEmployeeProfile() {
   const { employeeId } = useParams();
 
   useEffect(() => {
-      axios.get(`http://localhost:3000/api/employee/${employeeId}`)
+      axios.get(API_ENDPOINTS.employee.viewProfile(employeeId))
            .then(response => setEmployeeData(response.data));
   }, [employeeId]);
   

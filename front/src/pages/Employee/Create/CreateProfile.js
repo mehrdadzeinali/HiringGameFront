@@ -2,6 +2,7 @@ import React from 'react';
 import './CreateProfile.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_ENDPOINTS from '../../../configs/urls';
 
 export default class CreateProfile extends React.Component {
     constructor(props) {
@@ -62,13 +63,12 @@ export default class CreateProfile extends React.Component {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/api/employee/create', formData, {
+            const response = await axios.post(API_ENDPOINTS.employee.create, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
 
-            
             if (response.status === 201) {
                 const id = response.data.id;
                 this.setState({ submitted: true });

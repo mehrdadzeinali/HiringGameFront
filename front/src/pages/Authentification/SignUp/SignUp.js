@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_ENDPOINTS from '../../../configs/urls';
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -24,12 +25,7 @@ function SignUpPage() {
     }
   
     try {
-
-      console.log(formData.email);
-      console.log(formData.password);
-      console.log(formData.confirmPassword);
-
-      const response = await axios.post('http://localhost:3000/api/auth/register', {
+      const response = await axios.post(API_ENDPOINTS.auth.register, {
         email: formData.email,
         password: formData.password,
         confirmPassword: formData.confirmPassword
