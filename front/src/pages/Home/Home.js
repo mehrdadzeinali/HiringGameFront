@@ -15,10 +15,10 @@ function MyHomePage() {
             <p>
               <Typewriter text ="Searching for the perfect candidate to join your team can be a daunting process. Sifting through piles of resumes, conducting endless interviews, and still not finding the right fit? Bid those days goodbye! Our platform has revolutionized the hiring process. By showcasing detailed profiles of potential hires, you can now match your requirements with candidates' skills, experience, and aspirations. Dive in and explore a world where hiring is not just efficient but also delightful!" delay={75} />
             </p>
-            <Link to="/employee/search">
-              <button id="employerBtn" className="personalized-button-find button-spacing">Find a new colleague!</button>
-            </Link>
           </div>
+          <Link to="/employee/search">
+            <button id="employerBtn" className="personalized-button-find button-spacing">Find Talent</button>
+          </Link>
         </div>
 
         {/* Employee Section */}
@@ -28,10 +28,10 @@ function MyHomePage() {
             <p>
               <Typewriter text = "In today's competitive job market, standing out can be a challenge. But what if you could showcase all that you offer in one comprehensive profile? With our platform, that's a reality! Create a detailed profile highlighting your skills, experiences, aspirations, and let potential employers discover you. No more endless job applications – just sit back, relax, and wait for your next career opportunity to find you." delay={75} />
             </p>
-            <Link to="/employee/create">
-              <button id="employeeBtn" className="personalized-button button-spacing">Wait a new job!</button>
-            </Link>
           </div>
+          <Link to="/employee/create">
+            <button id="employeeBtn" className="personalized-button button-spacing">Create Profile</button>
+          </Link>
         </div>
 
       </div>

@@ -13,8 +13,10 @@
 .container > div {
   width: 50%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 60px;
 }
 
 .my-home-container,
@@ -25,7 +27,7 @@
   padding: 60px;
   border: 2px solid transparent;
   border-radius: 15px;
-  text-align: center;
+  text-align: start;
   box-shadow: 0 2px 5px transparent;
 }
 
@@ -49,6 +51,7 @@
   overflow: auto;
   height: auto;
   min-height: 50vh;
+  margin-top: 100;
 }
 
 .my-home-container h1,
