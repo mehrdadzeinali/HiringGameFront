@@ -2,25 +2,30 @@
 
 import React, { useState, useEffect } from 'react';
 
-const Typewriter = ({ text = '', delay = 100 }) => { // Default values added
+const Typewriter = ({ text = '', delay = 100 }) => {
     const [displayedText, setDisplayedText] = useState('');
 
     useEffect(() => {
-        if (!text) return; // Check if text is provided
-        
+        // Convert text to string to prevent "undefined" or "null" text issues
+        const validText = String(text);
+
+        // Early return if text is empty
+        if (!validText) return;
+
         let index = 0;
-        
+
         const typeInterval = setInterval(() => {
-            if (index < text.length) {
-                setDisplayedText((prevText) => prevText + text[index]);
+            if (index < validText.length) {
+                setDisplayedText((prevText) => prevText + validText.charAt(index));
                 index++;
             } else {
                 clearInterval(typeInterval);
             }
         }, delay);
 
-        return () => clearInterval(typeInterval); // Cleanup on unmount
-    }, [text, delay]);
+        // Cleanup interval on unmount or when text/delay changes
+        return () => clearInterval(typeInterval);
+    }, [text, delay]); // Depend on text and delay, rerun effect if these props change
 
     return <span>{displayedText}</span>;
 };

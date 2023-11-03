@@ -1,81 +1,54 @@
-.personalized-bg-container {
-  background-image: url('../../../../src/assets/images/image4.jpg');
-  font-family: Arial, sans-serif;
-  background-color: #F5F5F5;
-  padding: 40px;
+.search-page-bg-ctn {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-size: cover;
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 20px;
+  background-color: #E9ECEF;
 }
 
-.hiring-game-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.personalized-search-container {
-  max-width: 400px;
-  margin: 0 auto;
+.search-ctn {
+  background-color: #2C3E50;
+  color: #E9ECEF;
+  font-family: Arial, sans-serif;
   padding: 60px;
-  border: 2px solid transparent;
   border-radius: 15px;
-  background-color: transparent;
-  box-shadow: 0 2px 5px transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.personalized-search-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: whitesmoke;
-  font-size: x-large;
-}
-
-.personalized-search-container label,
-.personalized-search-container select,
-.personalized-search-container input,
-.personalized-search-container button {
-  display: block;
-  margin: 10px auto;
-  color: whitesmoke;
-  font-size: large;
-  font-style: oblique;
-}
-
-.personalized-search-container select,
-.personalized-search-container input {
-  padding: 10px;
-  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 30%;
   box-sizing: border-box;
+  font-size: small;
+}
+
+.search-ctn h1 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.search-ctn label {
+  display: block;
+  margin: 20px 0;
+  color: #E9ECEF;
+}
+
+.search-ctn select,
+.search-ctn input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
   border-radius: 5px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-}
-
-.personalized-search-container select {
-  background-color: black;
-  color: white;
-}
-
-.personalized-search-container button {
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
 }
 
-.personalized-search-container button:hover {
-  background-color: #0056b3;
+.personalized-search-button {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #2C3E50;
+  color: #E9ECEF;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  margin-top: 20px;
 }

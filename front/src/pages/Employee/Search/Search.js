@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Search.css';
-import { Link } from 'react-router-dom';
 
 const PersonalizedSearchPage = () => {
   const [category, setCategory] = useState('');
@@ -28,11 +27,8 @@ const PersonalizedSearchPage = () => {
   
 
   return (
-    <div className="personalized-bg-container">
-      <Link to="/home">
-          <button className="hiring-game-button">HirinGame!</button>
-      </Link>
-      <div className="personalized-search-container">
+    <div className="search-page-bg-ctn">
+      <div className="search-ctn">
         <h1>Search your ideal employee!</h1>
 
         <label>
@@ -82,9 +78,8 @@ const PersonalizedSearchPage = () => {
             <input type='text' value={city} onChange={(e) => setCity(e.target.value)} />
           </label>
         )}
-
-        <button onClick={handleSearch}>Search</button>
       </div>
+      <button className="personalized-search-button" onClick={handleSearch}>Search</button>
     </div>
   );
 };
