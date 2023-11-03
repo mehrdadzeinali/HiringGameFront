@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import Typewriter from '../../assets/fonts/TypeWriter';
+import Typewriter from '../../tools/TypeWriter';
 
 function MyHomePage() {
   return (
