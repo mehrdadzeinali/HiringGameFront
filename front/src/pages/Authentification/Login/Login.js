@@ -35,9 +35,8 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container"></div>
-      <div className="login-container">
+    <div className="login-page-bg">
+      <div className="login-ctn">
         <h1>Welcome !</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-container">

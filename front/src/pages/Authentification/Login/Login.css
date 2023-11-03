@@ -1,4 +1,4 @@
-.login-page  {
+.login-page-bg  {
   background-color: #E9ECEF;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
   z-index: -1;
 }
 
-.login-container {
+.login-ctn {
   max-width: 400px;
   margin: 0 auto;
   padding: 40px;
@@ -27,13 +27,13 @@
   z-index: 1;
 }
 
-.login-container h1 {
+.login-ctn h1 {
   text-align: center;
   margin-bottom: 40px;
   color: #E9ECEF; /* Changed to match the home page */
 }
 
-.input-container {
+.input-ctn {
   margin-bottom: 30px;
   color: #E9ECEF; /* Changed to match the home page */
 }
@@ -71,19 +71,19 @@ button:hover {
   transform: translateY(-3px);
 }
 
-.login-container p {
+.login-ctn p {
   font-size: 16px;
   margin-top: 20px;
   color: #E9ECEF;
 }
 
-.login-container a {
+.login-ctn a {
   color: #E9ECEF;
   text-decoration: none;
   font-weight: bold;
 }
 
-.login-container a:hover {
+.login-ctn a:hover {
   text-decoration: underline;
   color: black;
 }
