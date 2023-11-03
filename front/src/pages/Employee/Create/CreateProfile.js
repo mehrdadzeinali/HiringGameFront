@@ -130,9 +130,6 @@ export default class CreateProfile extends React.Component {
 
         return (
             <div className="create-profile-bg-container">
-                <Link to="/home">
-                    <button className="Home-button">HiringGame!</button>
-                </Link>
                 <div className="create-profile-form-container">
                     <h1>Create Your Profile</h1>
     
@@ -246,9 +243,8 @@ export default class CreateProfile extends React.Component {
                             </select>
                         </div>
                     </div>
-    
-                    <button onClick={this.handleSubmit}>Submit</button>
                 </div>
+                <button className="submit-button" onClick={this.handleSubmit}>Submit</button>
             </div>
         );
     }
