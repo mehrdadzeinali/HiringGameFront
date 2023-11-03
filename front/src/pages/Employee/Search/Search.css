@@ -18,6 +18,10 @@
   width: 30%;
   box-sizing: border-box;
   font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-ctn h1 {
@@ -26,9 +30,14 @@
 }
 
 .search-ctn label {
-  display: block;
+  display: flex;
+  flex-direction: column; 
   margin: 20px 0;
   color: #E9ECEF;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: large;
 }
 
 .search-ctn select,
@@ -40,7 +49,7 @@
   border: none;
 }
 
-.personalized-search-button {
+.search-btn {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 10px;

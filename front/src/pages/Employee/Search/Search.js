@@ -79,7 +79,7 @@ const PersonalizedSearchPage = () => {
           </label>
         )}
       </div>
-      <button className="personalized-search-button" onClick={handleSearch}>Search</button>
+      <button className="search-btn" onClick={handleSearch}>Search</button>
     </div>
   );
 };
