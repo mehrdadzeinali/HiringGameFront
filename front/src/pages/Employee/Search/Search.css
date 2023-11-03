@@ -1,7 +1,7 @@
 .search-page-bg-ctn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   padding: 20px;
@@ -21,7 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 25px;
 }
 
 .search-ctn h1 {
@@ -50,6 +51,9 @@
 }
 
 .search-btn {
+  position: absolute;
+  top: 870px;
+  right: 870px;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 10px;
