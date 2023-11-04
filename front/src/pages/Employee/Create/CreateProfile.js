@@ -144,7 +144,7 @@ export default class CreateProfile extends React.Component {
                             <input type="text" id="lastName" onChange={this.handleChange} />
                         </div>
                     </div>
-    
+
                     <div className="field-row">
                         <div className="field">
                             <label htmlFor="email">Email:</label>

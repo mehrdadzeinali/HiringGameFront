@@ -47,10 +47,13 @@
 .field input[type="url"],
 .field select,
 .field input[type="file"] {
-  padding: 10px;
   border-radius: 5px;
-  border: 1px solid #E9ECEF;
   background-color: #E9ECEF;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .field input[type="file"] {
