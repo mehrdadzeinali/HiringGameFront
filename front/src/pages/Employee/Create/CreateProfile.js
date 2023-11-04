@@ -121,9 +121,9 @@ export default class CreateProfile extends React.Component {
                             </div>
                         </div>
             
-                        <button onClick={() => this.setState({ submitted: false })}>Return</button>
-                        <button onClick={this.handleSecondSubmit}>Submit</button>            
                     </div>
+                        <button className="return-button" onClick={() => this.setState({ submitted: false })}>Return</button>
+                        <button className="submit-button" onClick={this.handleSecondSubmit}>Submit</button>            
                 </div>
             );
         }

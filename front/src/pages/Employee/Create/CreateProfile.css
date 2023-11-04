@@ -81,3 +81,24 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transform: translateY(-3px);
 }
+
+.return-button {
+  position: absolute;
+  top: 900px;
+  right: 870px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #2C3E50;
+  color: #E9ECEF;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  margin-top: 20px;
+}
+
+.return-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
