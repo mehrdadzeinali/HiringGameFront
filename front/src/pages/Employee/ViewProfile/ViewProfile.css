@@ -57,20 +57,3 @@
     font-size: 20px;
     color: #2C3E50;
   }
-
-.view-cv-button {
-  display: inline-block;
-  margin-left: 10px; /* Add some space between the buttons */
-  padding: 8px 15px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #007bff; /* Bootstrap primary color for example */
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.view-cv-button:hover {
-  background-color: #0056b3;
-  text-decoration: none;
-  color: #fff;
-}
