@@ -34,27 +34,12 @@ function ViewEmployeeProfile() {
 
   return (
     <div className="profile-page-view">
-      <div className="profile-container">
-      <Link to="/home">
-        <button className="hiring-game-button">HiringGame!</button>
-      </Link>
+      <div className="profile-photo-container">
         <img src={employeeData.profilePhoto} alt="Employee Profile" className="profile-photo-view"/>
         <h2>{employeeData.firstName} {employeeData.lastName}</h2>
       </div>
 
       <div className="employee-info-view">
-        <div className="info-card">
-          <span className="icon">📧</span> 
-          <span><strong>Email:</strong> {employeeData.email}</span>
-        </div>
-        <div className="info-card">
-          <span className="icon">📞</span>
-          <span><strong>Phone:</strong> {employeeData.phone}</span>
-        </div>
-        <div className="info-card">
-          <span className="icon">🔗</span>
-          <span><strong>LinkedIn:</strong> <a href={employeeData.linkedin.startsWith("http") ? employeeData.linkedin : `https://${employeeData.linkedin}`}>LinkedIn Profile</a></span>
-        </div>
         <div className="info-card">
           <span className="icon">🚀</span>
           <span><strong>Category:</strong> {employeeData.category}</span>
@@ -62,6 +47,14 @@ function ViewEmployeeProfile() {
         <div className="info-card">
           <span className="icon">👔</span>
           <span><strong>Job Title:</strong> {employeeData.jobTitle}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">📧</span> 
+          <span><strong>Email:</strong> {employeeData.email}</span>
+        </div>
+        <div className="info-card">
+          <span className="icon">🔗</span>
+          <span><strong>LinkedIn:</strong> <a href={employeeData.linkedin.startsWith("http") ? employeeData.linkedin : `https://${employeeData.linkedin}`}>LinkedIn Profile</a></span>
         </div>
         <div className="info-card">
           <span className="icon">⏳</span>

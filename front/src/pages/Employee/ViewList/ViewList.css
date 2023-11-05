@@ -4,7 +4,7 @@ body {
 
 .list-page-view {
   font-family: Arial, sans-serif;
-  background-color: #F8F9FA;
+  background-color: #2C3E50;
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -28,7 +28,7 @@ body {
 
 .profile-container {
   flex: 3;
-  background-color: #FFFFFF;
+  background-color: #2C3E50;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.06);
@@ -41,21 +41,33 @@ body {
 
 .employee-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
+
 
 .employee-square {
   background-color: #E9ECEF;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.2s;
+  width: 150px;
+  height: 200px;
+  min-width: 150px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2C3E50;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .employee-square:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px);
 }
 
 .profile-photo-view {
@@ -71,11 +83,30 @@ body {
 .employee-info {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
-.employee-name, .employee-job-title, .employee-experience {
-  margin-bottom: 5px;
-  font-weight: 500;
+.employee-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.employee-job-title {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #2C3E50;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+.employee-experience {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #2C3E50;
+  text-decoration: none;
 }
 
 .filter-section {
@@ -121,4 +152,8 @@ body {
 .filter-input:focus {
   border-color: #0056b3;
   box-shadow: 0 2px 6px rgba(0, 86, 179, 0.3);
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
 }

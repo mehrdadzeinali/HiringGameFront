@@ -1,7 +1,6 @@
 .profile-page-view {
-    background-image: url('../../../../src/assets/images/image4.jpg');
+    background-color: #2C3E50;
     font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -12,8 +11,9 @@
     background-repeat: no-repeat;
 }
   
-  .profile-container {
-    background-color: #FFFFFF;
+  .profile-photo-container {
+    background-color: #E9ECEF;
+    color: #2C3E50;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -27,8 +27,10 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 5px solid #2C3E50;
+    background-color: #E9ECEF;
     object-fit: cover;
+    color: #2C3E50;
   }
   
   .employee-info-view {
@@ -37,18 +39,38 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
+    color: #2C3E50;
   }
   
   .info-card {
-    background-color: #FFFFFF;
+    background-color: #E9ECEF;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    color: #2C3E50;
   }
   
   .icon {
     margin-right: 10px;
     font-size: 20px;
+    color: #2C3E50;
   }
+
+.view-cv-button {
+  display: inline-block;
+  margin-left: 10px; /* Add some space between the buttons */
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff; /* Bootstrap primary color for example */
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.view-cv-button:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+  color: #fff;
+}
