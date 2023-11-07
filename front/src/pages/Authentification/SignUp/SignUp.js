@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignUp.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_ENDPOINTS from '../../../configs/urls';
 import { useToast } from '@chakra-ui/react';
@@ -13,6 +13,7 @@ function SignUpPage() {
   });
   const [error, setError] = useState('');
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +79,18 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!formData.email || !formData.password || !formData.confirmPassword) {
+      toast({
+        title: "fields Error",
+        description: "all fields are required",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-right"
+      });
+      return;
+    }
+
     const emailValidation = isEmailValid(formData.email);
     if (!emailValidation.valid) {
       toast({
@@ -86,6 +99,7 @@ function SignUpPage() {
         status: "error",
         duration: 5000,
         isClosable: true,
+        position: "bottom-right"
       });
       return;
     }
@@ -98,6 +112,7 @@ function SignUpPage() {
         status: "error",
         duration: 5000,
         isClosable: true,
+        position: "bottom-right"
       });
       return;
     }
@@ -109,6 +124,7 @@ function SignUpPage() {
         status: "error",
         duration: 5000,
         isClosable: true,
+        position: "bottom-right"
       });
       return;
     }
@@ -122,11 +138,14 @@ function SignUpPage() {
 
       toast({
         title: "Account Created",
-        description: "Your account has been successfully created.",
+        description: "Your account has been successfully created. We sent you a code via mail. Please verify your mail.",
         status: "success",
         duration: 5000,
         isClosable: true,
+        position: "bottom-right"
       });
+
+      navigate('/auth/verify-email');
 
     } catch (error) {
       toast({
@@ -135,6 +154,7 @@ function SignUpPage() {
         status: "error",
         duration: 5000,
         isClosable: true,
+        position: "bottom-right"
       });
       console.error(error);
     }
