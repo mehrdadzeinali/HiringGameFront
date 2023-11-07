@@ -40,7 +40,7 @@ function LoginPage() {
       <div className="login-ctn">
         <h1>Welcome !</h1>
         <form onSubmit={handleSubmit}>
-          <div className="input-container">
+          <div className="input-ctn">
             <label htmlFor="username">Mail :</label>
             <input
               type="text"
@@ -50,7 +50,7 @@ function LoginPage() {
               onChange={handleInputChange}
             />
           </div>
-          <div className="input-container">
+          <div className="input-ctn">
             <label htmlFor="password">Password :</label>
             <input
               type="password"
@@ -60,7 +60,7 @@ function LoginPage() {
               onChange={handleInputChange}
             />
           </div>
-          <button type="submit" className="Signin-button">Sign in</button>
+          <button type="submit" className="login-button">Sign in</button>
         </form>
         <p>You don't have an account? <a href="/auth/signup">Sign up</a></p>
       </div>

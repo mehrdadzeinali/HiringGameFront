@@ -30,12 +30,14 @@
 .login-ctn h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: #E9ECEF; /* Changed to match the home page */
+  color: #E9ECEF;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .input-ctn {
   margin-bottom: 30px;
-  color: #E9ECEF; /* Changed to match the home page */
+  color: #E9ECEF;
 }
 
 label {
@@ -55,7 +57,7 @@ input[type="password"] {
   color: black;
 }
 
-button {
+.login-button {
   margin-top: 20px;
   background-color: #E9ECEF;
   color: #2C3E50;
