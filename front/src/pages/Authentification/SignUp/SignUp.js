@@ -73,7 +73,7 @@ function SignUpPage() {
         </div>
         <button type="submit">Sign Up</button>
       </form>
-      <p>You have already an account? <a href="/login">Sign in</a></p>
+      <p>You have already an account? <a href="/auth/login">Sign in</a></p>
       </div>
     </div>
   );

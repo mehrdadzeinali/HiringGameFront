@@ -5,11 +5,13 @@ import SearchPage from './pages/Employee/Search/Search';
 import CreateProfile from './pages/Employee/Create/CreateProfile';
 import ViewEmployeeProfile from './pages/Employee/ViewProfile/ViewProfile';
 import ViewEmployeesList from './pages/Employee/ViewList/ViewList';
+import VerifyEmail from './pages/Authentification/VerifyEmail/VerifyEmail';
 
 const routes = [
   // Authentication routes
-  { path: '/signup', component: SignUpPage },
-  { path: '/login', component: LoginPage },
+  { path: '/auth/signup', component: SignUpPage },
+  { path: '/auth/login', component: LoginPage },
+  { path: '/auth/verify-email', component: VerifyEmail},
 
   // main routes
   { path: '/home', component: Home },

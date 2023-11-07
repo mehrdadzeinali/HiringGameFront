@@ -18,8 +18,8 @@ function Header() {
                 </div>
             ) : (
                 <div className="auth-buttons">
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">Sign Up</Link>
+                    <Link to="/auth/login">Login</Link>
+                    <Link to="/auth/signup">Sign Up</Link>
                 </div>
             )}
         </header>

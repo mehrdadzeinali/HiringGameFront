@@ -62,7 +62,7 @@ function LoginPage() {
           </div>
           <button type="submit" className="Signin-button">Sign in</button>
         </form>
-        <p>You don't have an account? <a href="/signup">Sign up</a></p>
+        <p>You don't have an account? <a href="/auth/signup">Sign up</a></p>
       </div>
     </div>
   ); 
