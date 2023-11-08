@@ -5,7 +5,7 @@
     padding: 20px 50px;
     background-color: #E9ECEF;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
+  }
 
 .logo img {
     height: 50px;
@@ -38,3 +38,53 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+@media only screen and (max-width: 768px) {
+    .header {
+      padding: 20px;
+    }
+  
+    .logo img {
+      height: 40px;
+    }
+  
+    .auth-buttons a {
+      padding: 8px 15px;
+    }
+
+    .auth-buttons {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .profile img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .sign-up-container {
+      width: 90%;
+      margin: auto;
+      padding: 20px;
+      box-shadow: none;
+    }
+  
+    .auth-buttons {
+      flex-direction: row;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .auth-buttons a {
+      padding: 8px 15px;
+      flex-grow: 1;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px;
+    }
+
+  }

@@ -1,40 +1,56 @@
 import React, { useState } from 'react';
 import './VerifyEmail.css';
+import { useToast } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_ENDPOINTS from '../../../configs/urls';
 
 function VerifyEmailPage() {
-  // Initialize an array state to hold the six input values
   const [codeDigits, setCodeDigits] = useState(new Array(6).fill(''));
-  const [error, setError] = useState('');
+  const toast = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (index) => (e) => {
-    const newCodeDigits = [...codeDigits]; // Copy the current code digits array
-    newCodeDigits[index] = e.target.value; // Update the value at the specific index
-    setCodeDigits(newCodeDigits); // Set the new code digits array
+    const newCodeDigits = [...codeDigits];
+    newCodeDigits[index] = e.target.value;
+    setCodeDigits(newCodeDigits);
 
-    // Automatically focus the next input field if the value is filled
     if (e.target.value && index < 5) {
       document.getElementById(`digit-${index + 1}`).focus();
     }
   };
 
+  const showErrorToast = (description) => {
+    toast({
+      title: "Error",
+      description: description,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom-left"
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const code = codeDigits.join(''); // Join the code digits to form the full code
+    const code = codeDigits.join('');
     if (code.length !== 6) {
-      setError("Please fill in all the digits.");
+      showErrorToast("Please fill in all the digits.");
       return;
     }
 
     try {
       const response = await axios.post(API_ENDPOINTS.auth.verifyEmail, { code });
-      // Handle the response accordingly
+      // Handle the response if needed
     } catch (error) {
-      setError("An error occurred while verifying your email.");
+      showErrorToast("An error occurred while verifying your email.");
       console.error(error);
     }
+  };
+
+  const handleReturn = () => {
+    navigate('/auth/register');
   };
 
   return (
@@ -57,8 +73,8 @@ function VerifyEmailPage() {
               />
             ))}
           </div>
-          {error && <p className="error-message">{error}</p>}
-          <button type="submit">Verify Email</button>
+          <button className="verify-email-button" type="submit">Verify Email</button>
+          <button className="verify-email-button" type="button" onClick={handleReturn}>Return</button>
         </form>
       </div>
     </div>
