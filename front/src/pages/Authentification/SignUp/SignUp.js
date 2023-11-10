@@ -145,7 +145,7 @@ function SignUpPage() {
         position: "bottom-right"
       });
 
-      navigate('/auth/verify-email');
+      navigate('/auth/verify-email', { state: { email: formData.email } });
 
     } catch (error) {
       toast({

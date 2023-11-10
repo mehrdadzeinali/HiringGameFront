@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './VerifyEmail.css';
 import { useToast } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_ENDPOINTS from '../../../configs/urls';
 
 function VerifyEmailPage() {
-  const [codeDigits, setCodeDigits] = useState(new Array(6).fill(''));
+  const [verificationCode, setVerificationCode] = useState('');
+  const [email, setEmail] = useState('');
   const toast = useToast();
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const handleInputChange = (index) => (e) => {
-    const newCodeDigits = [...codeDigits];
-    newCodeDigits[index] = e.target.value;
-    setCodeDigits(newCodeDigits);
-
-    if (e.target.value && index < 5) {
-      document.getElementById(`digit-${index + 1}`).focus();
-    }
+  const handleInputChange = (e) => {
+    setVerificationCode(e.target.value);
   };
 
   const showErrorToast = (description) => {
@@ -31,26 +27,65 @@ function VerifyEmailPage() {
     });
   };
 
+  useEffect(() => {
+    if (location.state?.email) {
+      setEmail(location.state.email);
+    }
+  }, [location.state]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const code = codeDigits.join('');
-    if (code.length !== 6) {
-      showErrorToast("Please fill in all the digits.");
+    if (verificationCode.length !== 6) {
+      showErrorToast("Please enter the 6-digit verification code.");
+      return;
+    }
+
+    if (!email) {
+      showErrorToast("Email is not provided.");
       return;
     }
 
     try {
-      const response = await axios.post(API_ENDPOINTS.auth.verifyEmail, { code });
-      // Handle the response if needed
+
+      const params = {
+        email,
+        verificationCode
+      };
+
+      const response = await axios.post(API_ENDPOINTS.auth.veifyEmail, params);
+      if (response.status === 200) {
+        toast({
+          title: "Success",
+          description: response.data.message,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom-right"
+        });
+
+        navigate('/');
+
+      } else {
+        toast({
+          title: "Failed",
+          description: response.data.message,
+          status: "failed",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom-right"
+        });
+      }
+
     } catch (error) {
-      showErrorToast("An error occurred while verifying your email.");
-      console.error(error);
+      const errorMessage = error.response?.data?.message || "An error occurred while verifying your email.";
+      showErrorToast(errorMessage);
+      console.error('Error Details:', error.response);
     }
   };
 
   const handleReturn = () => {
-    navigate('/auth/register');
+    navigate('/auth/signup');
   };
 
   return (
@@ -58,27 +93,23 @@ function VerifyEmailPage() {
       <div className="verify-email-container">
         <h1>Verify Your Email</h1>
         <form onSubmit={handleSubmit}>
-          <div className="verify-email-input-container">
-            {codeDigits.map((digit, index) => (
-              <input
-                type="text"
-                id={`digit-${index}`}
-                maxLength="1"
-                key={index}
-                value={digit}
-                onChange={handleInputChange(index)}
-                className="verify-email-code-input"
-                autoComplete="off"
-                autoFocus={index === 0}
-              />
-            ))}
-          </div>
-          <button className="verify-email-button" type="submit">Verify Email</button>
-          <button className="verify-email-button" type="button" onClick={handleReturn}>Return</button>
+          <label htmlFor="verification-code">Verification Code:</label>
+          <input
+            type="text"
+            id="verification-code"
+            maxLength="6"
+            value={verificationCode}
+            onChange={handleInputChange}
+            className="verify-email-code-input"
+            autoComplete="off"
+            autoFocus
+          />
+          <button className="verify-email-button" type="submit">Verify</button>
         </form>
+        <button className="verify-email-button" type="button" onClick={handleReturn}>Return</button>
       </div>
     </div>
-  );
+  );  
 }
 
 export default VerifyEmailPage;

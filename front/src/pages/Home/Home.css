@@ -103,3 +103,53 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
 }
+
+@media (max-width: 768px) {
+  .home-bg-container,
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container > div {
+    width: 90%;
+  }
+
+  .my-home-container p,
+  .employee-container p,
+  .employer-container p {
+    font-size: medium;
+  }
+
+  .text-container,
+  .text-wrapper {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  .button-section {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .personalized-button-find,
+  .personalized-button {
+  }
+
+  .personalized-button:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+@media (hover: hover) and (max-width: 768px) {
+  .personalized-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+  }
+}
