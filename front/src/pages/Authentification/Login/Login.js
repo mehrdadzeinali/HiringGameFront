@@ -27,11 +27,13 @@ function LoginPage() {
         email: formData.username,
         password: formData.password,
       });
-
+  
       console.log(response);
   
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
+
+        window.dispatchEvent(new Event('authChange'));
   
         toast({
           title: "Login Successful",
@@ -41,7 +43,7 @@ function LoginPage() {
           isClosable: true,
           position: "bottom-right"
         });
-
+  
         navigate('/');
       }
     }
@@ -57,7 +59,7 @@ function LoginPage() {
       console.error('Error: ', error);
     }
   };
-
+  
   return (
     <div className="login-page-bg">
       <div className="login-ctn">

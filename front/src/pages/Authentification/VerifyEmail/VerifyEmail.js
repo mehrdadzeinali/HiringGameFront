@@ -96,6 +96,10 @@ function VerifyEmailPage() {
 
       const response = await axios.post(API_ENDPOINTS.auth.veifyEmail, params);
       if (response.status === 200) {
+
+        localStorage.setItem('token', response.data.token);
+        window.dispatchEvent(new Event('authChange'));
+
         toast({
           title: "Success",
           description: response.data.message,

@@ -1,90 +1,67 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #E9ECEF;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #E9ECEF;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
 
 .logo img {
-    height: 50px;
-    width: auto;
-    vertical-align: middle;
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .auth-buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.auth-buttons a {
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: #2C3E50;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+.auth-button {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #2C3E50;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.auth-buttons a:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px);
-}
-
-.profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+.auth-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
 @media only screen and (max-width: 768px) {
-    .header {
-      padding: 20px;
-    }
-  
-    .logo img {
-      height: 40px;
-    }
-  
-    .auth-buttons a {
-      padding: 8px 15px;
-    }
-
-    .auth-buttons {
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .profile img {
-      width: 35px;
-      height: 35px;
-    }
+  .header {
+    padding: 20px;
   }
-  
-  @media only screen and (max-width: 480px) {
-    .sign-up-container {
-      width: 90%;
-      margin: auto;
-      padding: 20px;
-      box-shadow: none;
-    }
-  
-    .auth-buttons {
-      flex-direction: row;
-      gap: 5px;
-      justify-content: center;
-    }
 
-    .auth-buttons a {
-      padding: 8px 15px;
-      flex-grow: 1;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      padding: 12px;
-    }
-
+  .logo img {
+    height: 40px;
   }
+
+  .auth-button {
+    padding: 8px 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auth-buttons {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .auth-button {
+    padding: 8px 15px;
+    flex-grow: 1;
+  }
+}
