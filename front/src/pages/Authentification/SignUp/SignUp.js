@@ -148,9 +148,10 @@ function SignUpPage() {
       navigate('/auth/verify-email', { state: { email: formData.email } });
 
     } catch (error) {
+      const errorMessage = error.response?.data?.message || "An error occurred while registering. Please try again.";
       toast({
         title: "Registration Error",
-        description: 'An error occurred while registering. Please try again.',
+        description: errorMessage,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -158,6 +159,7 @@ function SignUpPage() {
       });
       console.error(error);
     }
+    
   };
 
   return (

@@ -79,6 +79,7 @@ label {
   font-weight: bold;
   transition: all 0.3s ease;
   margin-top: 20px;
+  width: 70%;
 }
 
 .verify-email-button:hover {
@@ -86,22 +87,15 @@ label {
   transform: translateY(-2px);
 }
 
-.return-button {
-  background-color: #E9ECEF;
-  color: #2C3E50;
-  border: none;
-  border-radius: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
-.return-button:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+.resend-button {
+  width: 70%;
 }
 
 .error-message {
@@ -128,4 +122,3 @@ label {
   }
 
 }
-

@@ -33,6 +33,47 @@ function VerifyEmailPage() {
     }
   }, [location.state]);
 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [timer, setTimer] = useState(60);  
+
+  useEffect(() => {
+    let interval;
+  
+    if (isButtonDisabled && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    } else if (timer === 0) {
+      setIsButtonDisabled(false);
+      setTimer(60);
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [isButtonDisabled, timer]);
+
+  const handleResendCode = async () => {
+    setIsButtonDisabled(true);
+    setTimer(60);
+    try {
+      const response = await axios.post(API_ENDPOINTS.auth.resendVerificationMail, { email });
+
+      console.log(response);
+
+      toast({
+        title: "Code Resent",
+        description: "A new verification code has been sent to your email.",
+        status: "info",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-right"
+      });
+    } catch (error) {
+      showErrorToast("Failed to resend verification code.");
+      console.error('Error Details:', error.response);
+    }
+  };  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -104,9 +145,19 @@ function VerifyEmailPage() {
             autoComplete="off"
             autoFocus
           />
-          <button className="verify-email-button" type="submit">Verify</button>
+          <div className="button-group">
+            <button className="verify-email-button" type="submit">Verify</button>
+            <button className="verify-email-button" type="button" onClick={handleReturn}>Return</button>
+            <button
+              className="verify-email-button resend-button"
+              type="button"
+              disabled={isButtonDisabled}
+              onClick={handleResendCode}
+            >
+              {isButtonDisabled ? `Resend code in ${timer}s` : "Resend Code"}
+            </button>
+          </div>
         </form>
-        <button className="verify-email-button" type="button" onClick={handleReturn}>Return</button>
       </div>
     </div>
   );  

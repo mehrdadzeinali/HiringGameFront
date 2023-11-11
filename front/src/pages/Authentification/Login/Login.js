@@ -27,17 +27,21 @@ function LoginPage() {
         email: formData.username,
         password: formData.password,
       });
+
+      console.log(response);
   
       if (response.status === 200) {
+        localStorage.setItem('token', response.data.token);
+  
         toast({
-          title: "Success",
-          description: response.data.message,
+          title: "Login Successful",
+          description: "You are now logged in.",
           status: "success",
           duration: 5000,
           isClosable: true,
           position: "bottom-right"
         });
-  
+
         navigate('/');
       }
     }
