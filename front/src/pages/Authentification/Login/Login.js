@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_ENDPOINTS from '../../../configs/urls';
+import { useToast } from '@chakra-ui/react';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
+
+  const toast = useToast();
+  const navigate = useNavigate();  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,14 +28,29 @@ function LoginPage() {
         password: formData.password,
       });
   
-      if (response.data.status === 'success') {
-        console.log("Successfully logged in!");
-      } else {
-        console.log("Invalid email or password");
-      }
+      if (response.status === 200) {
+        toast({
+          title: "Success",
+          description: response.data.message,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom-right"
+        });
   
-    } catch (error) {
-      console.error(error);
+        navigate('/');
+      }
+    }
+    catch (error) {
+      toast({
+        title: "Login Failed",
+        description: error.response.data.message || "An error occurred while trying to log in.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-right"
+      });
+      console.error('Error: ', error);
     }
   };
 
